@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Toolbelt_Example' do
+  pod 'Toolbelt', :path => '../'
+
+  target 'Toolbelt_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
