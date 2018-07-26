@@ -2,6 +2,9 @@ use_frameworks!
 
 target 'Toolbelt_Example' do
   pod 'Toolbelt', :path => '../'
+  pod 'ToolbeltUI', :path => '../'
+  
+  pod 'SnapKit'
 
   target 'Toolbelt_Tests' do
     inherit! :search_paths

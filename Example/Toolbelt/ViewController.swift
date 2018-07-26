@@ -7,17 +7,38 @@
 //
 
 import UIKit
+import ToolbeltUI
+import SnapKit
+
+class ListViewController: BaseTableViewController<ListTableViewCell, ListItem> {}
+class ListTableViewCell: BaseTableViewCell<ListItem> {
+    override var item: ListItem! {
+        didSet {
+            self.textLabel?.text = item.name
+        }
+    }
+}
+
+struct ListItem {
+    let name: String
+}
 
 class ViewController: UIViewController {
+    
+    private lazy var tableViewController: ListViewController = {
+        let v = ListViewController()
+        v.items = [ListItem(name: "Item 1"), ListItem(name: "Item 2"), ListItem(name: "Item 3")]
+        return v
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        view.addSubview(tableViewController.tableView)
+        tableViewController.tableView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        tableViewController.tableView.reloadData()
     }
 
 }

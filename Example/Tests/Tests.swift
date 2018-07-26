@@ -1,5 +1,4 @@
 import XCTest
-import Toolbelt
 
 class Tests: XCTestCase {
     

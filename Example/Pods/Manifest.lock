@@ -1,0 +1,24 @@
+PODS:
+  - SnapKit (4.0.0)
+  - Toolbelt (0.0.1)
+  - ToolbeltUI (0.0.1)
+
+DEPENDENCIES:
+  - SnapKit
+  - Toolbelt (from `../`)
+  - ToolbeltUI (from `../`)
+
+EXTERNAL SOURCES:
+  Toolbelt:
+    :path: ../
+  ToolbeltUI:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Toolbelt: 68db704bc91116849272eda565706b87224263f1
+  ToolbeltUI: afc76668b584a33eeb38968859be45e43949092b
+
+PODFILE CHECKSUM: 609fa50bfd314250840961fdee129163a994795e
+
+COCOAPODS: 1.3.1
