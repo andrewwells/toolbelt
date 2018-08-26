@@ -1,9 +1,12 @@
 PODS:
+  - Hue (3.0.1)
   - SnapKit (4.0.0)
-  - Toolbelt (0.0.1)
-  - ToolbeltUI (0.0.1)
+  - Toolbelt (0.0.2)
+  - ToolbeltUI (0.0.1):
+    - SnapKit
 
 DEPENDENCIES:
+  - Hue
   - SnapKit
   - Toolbelt (from `../`)
   - ToolbeltUI (from `../`)
@@ -15,10 +18,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
+  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  Toolbelt: 68db704bc91116849272eda565706b87224263f1
-  ToolbeltUI: afc76668b584a33eeb38968859be45e43949092b
+  Toolbelt: cd9aca51a4a9154b08fc3fd4dd79abfbdcea5153
+  ToolbeltUI: 1cae9051c2322cc3f97025293d3b34da8528e34f
 
-PODFILE CHECKSUM: 609fa50bfd314250840961fdee129163a994795e
+PODFILE CHECKSUM: b30965d60aed01eabef702c51ba0797da261ee60
 
 COCOAPODS: 1.3.1

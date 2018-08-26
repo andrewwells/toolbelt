@@ -13,6 +13,8 @@ open class BaseTableViewController<T: BaseTableViewCell<U>, U>: UITableViewContr
     
     public var items = [U]()
     
+    public var didSelectRow: ((IndexPath) -> Void)?
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(T.self, forCellReuseIdentifier: cellIdentifier)
@@ -30,6 +32,10 @@ open class BaseTableViewController<T: BaseTableViewCell<U>, U>: UITableViewContr
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BaseTableViewCell<U>
         cell.item = items[indexPath.row]
         return cell
+    }
+    
+    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectRow?(indexPath)
     }
     
 }

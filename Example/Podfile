@@ -1,3 +1,4 @@
+platform :ios, '11.0'
 use_frameworks!
 
 target 'Toolbelt_Example' do
@@ -5,6 +6,7 @@ target 'Toolbelt_Example' do
   pod 'ToolbeltUI', :path => '../'
   
   pod 'SnapKit'
+  pod 'Hue'
 
   target 'Toolbelt_Tests' do
     inherit! :search_paths

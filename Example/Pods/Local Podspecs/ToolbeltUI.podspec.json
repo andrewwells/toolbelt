@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": "ToolbeltUI/Classes/**/*"
+  "source_files": "ToolbeltUI/Classes/**/*",
+  "dependencies": {
+    "SnapKit": [
+
+    ]
+  }
 }

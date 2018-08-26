@@ -8,6 +8,7 @@
 
 import UIKit
 import ToolbeltUI
+import Toolbelt
 import SnapKit
 
 class ListViewController: BaseTableViewController<ListTableViewCell, ListItem> {}
@@ -25,18 +26,30 @@ struct ListItem {
 
 class ViewController: UIViewController {
     
+    private let items = ["Buttons"]
+    
     private lazy var tableViewController: ListViewController = {
         let v = ListViewController()
-        v.items = [ListItem(name: "Item 1"), ListItem(name: "Item 2"), ListItem(name: "Item 3")]
+        v.items = self.items.map { ListItem(name: $0) }
         return v
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableViewController.didSelectRow = { [weak self] indexPath in
+            self?.tableViewController.tableView.deselectRow(at: indexPath, animated: true)
+            switch indexPath.row {
+            case 0:
+                Log.d("launch buttons")
+                self?.navigationController?.pushViewController(ButtonsViewController(), animated: true)
+            default: break
+            }
+        }
+        
         view.addSubview(tableViewController.tableView)
         tableViewController.tableView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(64, 0, 20, 0))
         }
         tableViewController.tableView.reloadData()
     }
